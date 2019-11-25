@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+
+#importe de la clase
 from .modeloDominio.Usuario import Usuario
-import json
-import datetime
 
 
 

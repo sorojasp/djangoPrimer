@@ -14,10 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from library.views import *
+
 from .modeloDominio.Usuario import Usuario
 from .modeloDominio.Reciclador import Reciclador
+
+
+
 
 
 usuario=Usuario("Stiven Orlando", "Rojas Pulido")
@@ -29,5 +33,6 @@ print(reciclador.getApellidos())
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('primer/<anio>/<nombre>', recibedatosGet),
-    path('datosPost/', recibeDatosPost)
+    path('datosPost/', recibeDatosPost),
+    path('us/', include('apps.usuario.urls'))
 ]
