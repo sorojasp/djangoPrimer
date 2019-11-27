@@ -18,7 +18,7 @@ def recibedatosGet(request,nombre,anio):
     print(nombre)
     return HttpResponse(anio)
 
-@csrf_exempt #decorador para csrf
+@csrf_exempt #decorador para csrf para poder responder las peticiones que se le hace al servidor
 def recibeDatosPost(request):
     received_json_data=json.loads(request.body)
     reciclador = Usuario(received_json_data["nombres"], received_json_data["apellidos"])
